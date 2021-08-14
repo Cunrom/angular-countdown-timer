@@ -20,6 +20,7 @@ export class CountdownTimerComponent implements OnInit {
   seconds = 0;
   secondsString: string;
   milliseconds = 0;
+  totalMilliseconds = 0;
 
   constructor() { }
 
@@ -35,6 +36,7 @@ export class CountdownTimerComponent implements OnInit {
       this.minutes = Math.floor((timeTillEnd % (1000 * 60 * 60)) / (1000 * 60));
       this.seconds = Math.floor((timeTillEnd % (1000 * 60)) / 1000);
       this.milliseconds = Math.floor((timeTillEnd % (1000)));
+      this.totalMilliseconds = Math.floor(timeTillEnd);
       this.months = Math.floor(this.days / 30);
       this.weeks = Math.floor((this.days % 30 / 7));
       this.days = (this.days - ((this.months * 30) + (this.weeks * 7)));
